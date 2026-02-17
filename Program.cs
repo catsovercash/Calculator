@@ -14,7 +14,7 @@ namespace Calculator
 
         static double numberTwo()
         {
-            Console.Write("Entger the second number: ");
+            Console.Write("Enter the second number: ");
             double numTwo = double.Parse(Console.ReadLine());
             return numTwo;
         }
