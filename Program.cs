@@ -71,8 +71,9 @@ namespace Calculator
             }
             else
             {
-                throw new Exception("Invalid Operator");
+                Console.WriteLine("Invalid operator.");
             }
+
 
         }
 
