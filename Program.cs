@@ -4,27 +4,94 @@ namespace Calculator
 {
     internal class Program
     {
-
         static double numberOne()
         {
-            Console.Write("Enter the first number: ");
-            double numOne = double.Parse(Console.ReadLine());
-            return numOne;
+
+            bool access = false;
+
+            while (!access)
+            {
+
+                try
+                {
+
+                    Console.Write("Enter the first number: ");
+                    double numOne = double.Parse(Console.ReadLine());
+                    access = true;
+                    return numOne;
+
+                }
+
+                catch (FormatException)
+                {
+
+                    Console.Write("Invalid Input\n");
+
+                }
+            }
+
+            return 0;
+
         }
+
 
         static double numberTwo()
         {
-            Console.Write("Enter the second number: ");
-            double numTwo = double.Parse(Console.ReadLine());
-            return numTwo;
+            bool access = false;
+
+            while (!access)
+            {
+
+                try
+                {
+
+                    Console.Write("Enter the second number: ");
+                    double numTwo = double.Parse(Console.ReadLine());
+                    access = true;
+                    return numTwo;
+
+                }
+
+                catch (FormatException)
+                {
+
+                    Console.Write("Invalid Input\n");
+
+                }
+            }
+
+            return 0;
         }
 
         static char mathematicsOperator()
         {
-            Console.Write("Enter the operator: ");
-            char mathOperator = char.Parse(Console.ReadLine());
-            return mathOperator;
+            while (true)
+            {
+                Console.Write("Enter the operator (+, -, *, /): ");
+
+                try
+                {
+                    char mathOperator = char.Parse(Console.ReadLine());
+
+                    if (mathOperator == '+' || mathOperator == '-' ||
+                        mathOperator == '*' || mathOperator == '/')
+                    {
+                        return mathOperator;
+                    }
+                    else
+                    {
+                        Console.Write("Invalid operator. Use +, -, *, /\n");
+                    }
+
+                }
+                catch (FormatException)
+                {
+                    Console.Write("Invalid input\n");
+                }
+            }
         }
+
+
 
         static double add(double numOne, double numTwo)
         {
