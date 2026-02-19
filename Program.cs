@@ -65,7 +65,10 @@ namespace Calculator
 
         static char mathematicsOperator()
         {
-            while (true)
+
+            bool access = false;
+
+            while (!access)
             {
                 Console.Write("Enter the operator (+, -, *, /): ");
 
@@ -76,6 +79,7 @@ namespace Calculator
                     if (mathOperator == '+' || mathOperator == '-' ||
                         mathOperator == '*' || mathOperator == '/')
                     {
+                        access = true;
                         return mathOperator;
                     }
                     else
@@ -89,6 +93,7 @@ namespace Calculator
                     Console.Write("Invalid input\n");
                 }
             }
+            return '.';
         }
 
 
